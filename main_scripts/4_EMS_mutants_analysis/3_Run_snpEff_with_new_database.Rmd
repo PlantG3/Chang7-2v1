@@ -1,0 +1,42 @@
+#### Build new snpEff database (use Chang7-2 ref as example) ####
+
+```{r,eval=FALSE}
+
+source activate EMS_SNP
+## organize required files
+cd snpEff
+mkdir data
+cd data
+mkdir Chang7-2
+cd Chang7-2
+mv Chang7-2v1a0.1.fasta sequences.fa ## ref genome fasta
+mv Chang7-2v1a0.1.gtf genes.gtf
+mv Chang7-2v1a0.1.cds.fasta cds.fa
+mv Chang7-2v1a0.1.proteins.fasta protein.fa
+cd ../../
+  
+## edit snpEff.config file
+add two commands in snpEff.config file
+# Chang7-2 ref genome v1a0.1
+Chang7-2.genome: Chang7-2v1a0.1.fa
+
+## Run snpEff build ##
+java -Xmx18g -jar snpEff.jar build -gtf22 -v Chang7-2
+
+```
+
+The database file was saved as ./data/Chang7-2/snpEffectPredictor.bin
+
+#### Run snpEff to annotate SNPs ####
+
+```{r,eval=FALSE}
+
+## Run snpEff with Chang7-2 database ##
+java -Xmx18g -jar snpEff.jar Chang7-2 test.vcf > test.anno.vcf
+
+## extract variants information of SNPs ##
+more test.anno.vcf | grep -v "#" | cut -f 1,2,8 | sed 's/|/\t/g' | cut -f 1,2,4,5,7 > test.anno.info.txt
+
+```
+
+The summary and gene information are saved in 'snpEff_summary.html' and 'snpEff_genes.txt'.

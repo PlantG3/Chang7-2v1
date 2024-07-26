@@ -1,0 +1,4 @@
+/bulk/liu3zhen/research/projects/Chang7-2/main_annotation/02_RNAseqAssembly/02c_stringtie/02c2o_stringtie.g0.merge.gtf	St	True
+/bulk/liu3zhen/research/projects/Chang7-2/main_annotation/02_RNAseqAssembly/02e_strawberry/02e1o_strawberry/assembled_transcripts.gtf	Sw	True
+/bulk/liu3zhen/research/projects/Chang7-2/main_annotation/02_RNAseqAssembly/02b_cufflinks/transcripts.gtf	Cf	True
+/bulk/liu3zhen/research/projects/Chang7-2/main_annotation/02_RNAseqAssembly/02d_class2/02d1o_class2.gtf	Cl	True

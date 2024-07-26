@@ -1,0 +1,12 @@
+perl /homes/liu3zhen/local/slurm/trimmomatic/trimmomatic.sbatch.pl \
+	--mem 3G \
+	--time 1-00:00:00 \
+	--trim_shell "/homes/liu3zhen/local/pipelines/trimmomatic/trimmomatic.pe.sh" \
+	--trimmomatic "/homes/liu3zhen/local/jars/trimmomatic-0.38.jar" \
+	--adaptor_file "/homes/liu3zhen/local/pipelines/trimmomatic/trimmomatic_adaptDB/TruSeq3-PE.fa" \
+	--indir "/bulk/liu3zhen/LiuRawData/collaboration/CAAS/RNAseq" \
+	--outdir "." \
+	--fq1feature "_R1.fq.gz" \
+	--fq2feature "_R2.fq.gz" \
+	--threads 8 \
+	--min_len 80
