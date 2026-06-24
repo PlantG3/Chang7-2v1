@@ -1,0 +1,10 @@
+label	CHROM	POS	REF	ALT	sample_name
+chr1_300	chr1	300	G	A	3759-1
+chr1_701	chr1	701	G	A	3738-3
+chr1_737	chr1	737	C	T	3761-3
+chr1_1204	chr1	1204	C	T	3925-7
+chr1_3712	chr1	3712	G	A	3771-3
+chr1_8095	chr1	8095	G	A	3930-2
+chr1_8739	chr1	8739	G	A	3715-4
+chr1_9204	chr1	9204	C	T	3756-8
+chr1_10383	chr1	10383	G	A	4041-2
