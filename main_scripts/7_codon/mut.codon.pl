@@ -26,13 +26,14 @@ $seqhash{$seqname} = $seq;
 close IN;
 
 # table
+# chr1	10219293	C	T	Zm00091aa000325	Zm00091aa000325_T002	missense	MODERATE	1487C>T	T496I	1487/1659	1487/1659	496/552	.	37	29	56	47	55	54	58	43	22DG7849-4	0.439393939393939	missense	169	144	0.460063897763578
 #chr1	254880169	G	A	Zm00091aa004338	Zm00091aa004338_T003	synonymous	LOW	1146G>A	E382E	1146/1941	1146/1941	382/646	.	104	0.0545454545454545	synonymous
 #grep "^seq" -v | awk '$18=="missense" || $18=="synonymous"' | cut -f 1,2,3,4,5,6,12,18 | head 
 open(DATA, "<", $ARGV[1]) || die;
 while (<DATA>) {
 	chomp;
 	my @line = split("\t", $_);
-	if (($line[0] ne "seq") and (($line[17] eq "missense") or ($line[17] eq "synonymous"))) {
+	if (($line[0] ne "seq") and (($line[6] eq "missense") or ($line[6] eq "synonymous"))) {
 		my $mut_pos = $line[11];
 		my $transcript = $line[5];
 		$mut_pos =~ s/\/.*//;
