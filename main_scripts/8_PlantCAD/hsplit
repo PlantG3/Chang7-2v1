@@ -1,0 +1,14 @@
+#!/bin/bash
+
+input=$1
+nlines=$2
+prefix=$3
+
+# split without header
+tail -n +2 $input | split -d -l $nlines - $prefix
+
+# add header
+for esplit in $prefix*; do
+	sed -i '1 i'"`head $input -n 1`" $esplit
+done
+
